@@ -1,5 +1,5 @@
 # C++ container printer - CPPCP
-Printing in C++ with IOstream is quite cumbersome and inconvenient. C++ also does not have a default output for containers. Printing nested containers is even more difficult. This library provides a simple solution for fast debug printing (with competitive programming in mind).
+Printing in C++ with IOstream is quite cumbersome and inconvenient. C++ also does not have a default output for containers (only available with `std::print` in C++23). Printing nested containers is even more difficult. This library provides a simple solution for fast debug printing (with competitive programming in mind).
 
 ## About
 CPPCP is a header file providing 2 (overloaded/templatized) functions
