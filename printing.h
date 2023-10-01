@@ -263,13 +263,13 @@ void print_map(const C &container, const std::string &type) {
 			print<true>(container.begin()->first);
 			std::cout << " -> ";
 			print<true>(container.begin()->second);
-		}
-		for(auto it = next(container.begin()); it != container.end(); ++it) {
-			const auto& [key, value] = *it;
-			std::cout << ", ";
-			print<true>(key);
-			std::cout << " -> ";
-			print<true>(value);
+			for(auto it = next(container.begin()); it != container.end(); ++it) {
+				const auto& [key, value] = *it;
+				std::cout << ", ";
+				print<true>(key);
+				std::cout << " -> ";
+				print<true>(value);
+			}
 		}
 		std::cout << "}";
 	} else {
@@ -314,12 +314,12 @@ void print_list(const C &container, const std::string &type, const std::string& 
 			std::cout << "(";
 			print<true>(*container.begin());
 			std::cout << ")";
-		}
-		for(auto it = next(container.begin()); it != container.end(); ++it) {
-			const auto& value = *it;
-			std::cout << " " << separator <<" (";
-			print<true>(value);
-			std::cout << ")";
+			for(auto it = next(container.begin()); it != container.end(); ++it) {
+				const auto& value = *it;
+				std::cout << " " << separator <<" (";
+				print<true>(value);
+				std::cout << ")";
+			}
 		}
 		std::cout << ">";
 		if constexpr (!nested) {
@@ -355,7 +355,6 @@ template<bool nested, class T>
 void print(const std::queue<T>& q) {
 	print_private_container<nested>(q, "Q", ",", '[', ']');
 }
-
 
 template<bool nested, class T>
 void print(const std::deque<T>& dq) {
