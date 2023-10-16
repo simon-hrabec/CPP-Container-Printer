@@ -10,7 +10,7 @@ CPPCP is a header file providing 2 (overloaded/templatized) functions
 The `print` function relies on having a special overload for any special type. Hence it can be simply extended by providing overload for an additional type (custom struct/class) or for a specific pair/tuple.
 
 ## Supported types
-All basic types that std::ostream can print are supported, some are printed a bit differently. `bool` is printed as `true`/`false`, `std::string`/`const char*` is printed with quotes. Arbitrary `std::pair` and `std::tuple` are also supported.
+All basic types that std::ostream can print are supported, some are printed a bit differently. `bool` is printed as `true`/`false`, `std::string`/`const char*` is printed with quotes. Arbitrary `std::pair` and `std::tuple` are also supported. Iterators can also be printed (prints the value with IT prefix).
 
 **Containers**
 All the [basic containers from STL]([url](https://en.cppreference.com/w/cpp/container)) are included. More specifically:
@@ -19,7 +19,6 @@ All the [basic containers from STL]([url](https://en.cppreference.com/w/cpp/cont
 ## Future TODO
 
  - Add support for the remaining containers/adaptors/views: `std::span`, `std::flat_map`, `std::flat_set`, `std::flat_multimap`, `std::flat_multiset`, `std::mdspan` (more are C++23 only).
- - Add support for printing all possible iterators.
  - Make an optional way to print `std::vector`/`std::array` with indices
  - Make `printx` work without any interpolated value
  - Add support for C style arrays
